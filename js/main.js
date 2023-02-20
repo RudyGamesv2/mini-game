@@ -1,6 +1,6 @@
 // =========================== start music ===========================
 
-bgcMusic = () =>{
+bgcMusic = () => {
     backgroundMusic = new Audio('./music/emotional-music.mp3');
     if (typeof backgroundMusic.loop == 'boolean') {
         backgroundMusic.loop = true;
@@ -13,7 +13,6 @@ bgcMusic = () =>{
     }
     backgroundMusic.play();
 }
-
 
 
 // =========================== section ===========================
@@ -286,12 +285,12 @@ btnLevelFour.onclick = () => {
     }
 
     sendFourBtn.onclick = () => {
-        textHint.textContent = "Spróbuj kliknąć ten przycisk więcej niż jeden raz";
+        // textHint.textContent = "Spróbuj kliknąć ten przycisk więcej niż jeden raz";
         levelFourFirstParagraph.textContent = "Spróbuj kliknąć ten przycisk więcej niż jeden raz";
 
         hintFour.onclick = () => {
             if (bulbs == 1) {
-                textHint.textContent = "Spróbuj odblokować jakoś przycisk"
+                textHint.textContent = "Spróbuj odblokować jakoś przycisk (biała kłódka)"
                 bulbs--
                 bulbsHidden()
             }
@@ -309,8 +308,7 @@ btnLevelFour.onclick = () => {
                 endGame()
             }
             else {
-                levelFourFirstParagraph.textContent = "Zablowane"
-                textHint.textContent = "Zablowane"
+                levelFourFirstParagraph.textContent = "Zablowane za pomocą kłódki"
             }
         }
     }
@@ -322,5 +320,3 @@ btnLevelFour.onclick = () => {
 document.getElementById('reset').onclick = () => {
     location.reload()
 }
-
-
