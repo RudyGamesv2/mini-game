@@ -1,0 +1,261 @@
+@use 'colors' as *;
+@use 'veriables';
+
+body {
+    position: relative;
+    background-color: $light-gray;
+}
+
+nav {
+    position: fixed;
+    background-color: #000;
+    width: 100%;
+    height: 100px;
+    color: $white;
+    z-index: 999;
+
+    .icons {
+        position: absolute;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+    }
+
+    .hearts {
+        margin-right: 15px;
+        color: $main-color;
+
+        .fa-heart {
+            animation: opacity 3s infinite;
+        }
+
+        .one {
+            animation-delay: .5s;
+        }
+
+        .two {
+            animation-delay: 1s;
+        }
+
+        .three {
+            animation-delay: 1.5s;
+        }
+
+    }
+
+    .bulbs {
+        color: yellow;
+        animation: opacity 2s infinite;
+    }
+}
+
+section {
+    position: relative;
+    background-color: $light-gray;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    animation: hi 1s forwards;
+}
+
+@keyframes hi {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+.text {
+    z-index: 1;
+}
+
+.level-one {
+
+    color: #fff;
+
+    position: relative;
+    background-image: url('/img/background/one.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+
+    &::before {
+
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 9, 27, .85);
+        z-index: -1;
+
+    }
+
+}
+
+.level-three {
+    height: 100%;
+    padding: 130px;
+    color: #fff;
+
+    position: relative;
+    background-image: url('/img/background/two.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+
+
+    .image-level-three {
+        position: relative;
+        z-index: -2;
+
+        &::before {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: 0;
+        }
+    }
+
+    &::before {
+
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .7);
+        z-index: -1;
+
+    }
+
+}
+
+
+
+.level-four {
+    position: relative;
+    height: 100%;
+    padding: 130px 0;
+
+    .lock{
+        position: absolute;
+        top: 120px;
+        right: 10px;
+        color: $white;
+        cursor: pointer;
+        opacity: .5;
+        transition: opacity .5s;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+
+.image-hide-container {
+    margin: 20px 0;
+
+    .hide-image{
+        display: none;
+        transition: display .5s;
+    }
+
+    .fa-file {
+        font-size: 30px;
+        transition: color .5s;
+        
+        &:hover {
+            color: $main-color;
+            cursor: pointer;
+        }
+    }
+}
+
+
+#send-three {
+    &:hover {
+        cursor: url('/img/key-solid.svg'), auto;
+    }
+}
+
+#send-four{
+    transform: translateX(0);
+    &:hover{
+        animation: troll 1s forwards ease-in-out;
+    }
+}
+
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: $bg-color;
+    z-index: 999;
+    text-align: center;
+    bottom: 0;
+    color: $light-gray;
+    
+    div {
+        padding: 61px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.movie{
+    width: 50%;
+    height: 50%;
+    
+    #myVideo{
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes troll {
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(-140px);
+    }
+}

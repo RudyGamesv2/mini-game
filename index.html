@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- dynamic change -->
+    <title>Strona</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/58309639ce.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="icons">
+            <div class="hearts">
+                <i id="heart-one" class="fa-solid fa-heart one"></i>
+                <i id="heart-two" class="fa-solid fa-heart two"></i>
+                <i id="heart-three" class="fa-solid fa-heart three"></i>
+            </div>
+
+            <div class="bulbs">
+                <i id="bulbs-one" class="fa-solid fa-lightbulb"></i>
+            </div>
+            <!-- <p>czas</p> -->
+        </div>
+
+
+    </nav>
+
+    <main>
+
+
+        <section id="start" class="start">
+            <h1>Witaj w grze!</h1>
+            <div class="underline"></div>
+            <p>Twoim zadaniem jest rozwiązanie wszystkich zagadek. <br>Posiadasz trzy życia i jedną podpowiedź do
+                wykorzystania. <br>Wszystko jest na górze strony.</p>
+
+            <p>Kliknij przycisk żeby zacząć grę!</p>
+            <button id="start-btn" class="glass">Zacznij</button>
+
+        </section>
+
+        <section id="level-one" class="level-one no-visible">
+            <div class="image-one"></div>
+
+            <div class="text">
+                <h2>Pierwszy poziom</h2>
+                <div class="underline"></div>
+
+                <div class="inputs">
+                    <label for="input-level-one">Jak nazywa się nowszy sposób definiowania funkcji w <abbr
+                            title="JavaScript">JS</abbr>:</label>
+                    <input type="text" id="input-level-one">
+                </div>
+
+                <div class="buttons">
+                    <button id="send-one" class="send-btn">Sprawdź</button>
+                    <button id="hint-one" class="hint">Podpowiedź</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="level-two" class="level-two no-visible">
+            <h2>Drugi poziom</h2>
+            <div class="underline"></div>
+
+            <img src="./img/second-level.png"
+                alt='let tab = ["2", "2"]; let wynik = tab[2] + tab[2]; console.log(wynik)'>
+
+            <div class="inputs">
+                <label for="input-level-two">Co przeglądarka wypisze w konsoli:</label>
+                <input type="text" id="input-level-two">
+            </div>
+
+            <div class="buttons">
+                <button id="send-two" class="send-btn">Sprawdź</button>
+                <button id="hint-two" class="hint">Podpowiedź</button>
+            </div>
+        </section>
+
+        <section id="level-three" class="level-three no-visible">
+            <h2>Trzeci poziom</h2>
+            <div class="underline"></div>
+
+            <div class="image-container">
+                <img class="image-level-three" src="./img/books-mini.jpg"
+                    alt='Na zdjęciu widać książki a na nich cyfry: 1 i 5'>
+            </div>
+            <div class="image-hide-container">
+                <i id="image-show" class="fa-regular fa-file"></i>
+                <img id="hide-image" class="hide-image" src="./img/hide-image.png"
+                    alt="Ta cyfra jest 3 w kolejności do wpisywania :) Cyfra: 7">
+            </div>
+
+            <div class="inputs">
+                <label for="input-level-three-1">Znajdź na stronie hasło do sejfu</label>
+                <input type="number" id="input-level-three-1" min="0" max="9" value="0">
+                <input type="number" id="input-level-three-2" min="0" max="9" value="0">
+                <input type="number" id="input-level-three-3" min="0" max="9" value="0">
+                <input type="number" id="input-level-three-4" min="0" max="9" value="0">
+            </div>
+
+            <div class="buttons">
+                <button id="send-three" class="send-btn"><i class="fa-solid fa-vault"></i></button>
+                <button id="hint-three" class="hint">Podpowiedź</button>
+            </div>
+
+        </section>
+
+        <section id="level-four" class="level-four no-visible">
+            <h2>Ostatni poziom</h2>
+            <div class="underline"></div>
+
+            <button id="btn-level-four">Kliknij</button>
+
+            <p id="level-four-first-paragraph"></p>
+
+            <div id="second-step" class="movie no-visible">
+
+                <div class="lock">
+                    <i id="lock" class="fa-solid fa-lock"></i>
+                    <i id="lock-open" class="fa-solid fa-lock-open"></i>
+                </div>
+
+                <video autoplay muted loop id="myVideo">
+                    <source src="troll.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+
+                <button id="send-four" class="send-btn">Sprawdź</button>
+                <p id="level-four-second-paragraph" class="no-visible">Dalej myślałeś że to takie proste. Spróbuj odblokować przycisk</p>
+                <button id="hint-four" class="hint">Podpowiedź</button>
+            </div>
+        </section>
+
+        <section id="end-lose" class="end lose no-visible">
+            <div class="end-hero"></div>
+
+            <div class="end-text">
+                <h1>Przegrałeś!</h1>
+                <p>Spróbuj ponownie</p>
+                <button id="reset">Reset</button>
+            </div>
+
+        </section>
+
+        <section id="end-win" class="end winner no-visible">
+            <div class="end-hero"></div>
+
+            <div class="end-text">
+                <h1>Gratulacje ukończyłeś grę!</h1>
+                <p id="end-heart-text">Pozostałe życia</p>
+                <p id="end-bulbs-text">Pozostałe wskazówki: </p>
+            </div>
+
+        </section>
+    </main>
+
+
+
+
+    <footer>
+        <div>
+            <p>Podpowiedź: <span id="text-hint" class="crimson"></span></p>
+            <!-- <p>Stronę wykonał: Marek Gondek</p> -->
+            <p id="text-send" class="crimson">Zła odpowiedź!</p>
+        </div>
+
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
